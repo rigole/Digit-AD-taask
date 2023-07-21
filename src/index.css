@@ -1,13 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?familyarticle_name=Comfortaa:wght@300;400;500;600&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Comfortaa',Arial, Helvetica, sans-serif;
+  margin: 2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*home page style */
+.title-div{
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.div-search {
+  text-align: center;
+}
+.title-text{
+  text-transform: capitalize; 
+  font-size: 32px;
+  font-weight:bold;
+   margin-bottom: 2rem;
+}
+.nosubmit { 
+ 
+  border: 1px solid #555;
+  width: 50%;
+  border-radius: 0.75rem;
+  padding: 9px 4px 9px 40px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+.articles_card_group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.article_card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.5);
+  margin-left: 1rem;
+}
+
+.article_content{
+  position: absolute;
+  bottom: 0px;
+  width: 80%;
+  height: 80px;
+  background-color: white;
+  left: 10%;
+  text-align: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.article_description {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 18px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.imgbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.article_image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.article_name{
+  
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 1rem;
+  font-size: large;
+  padding-bottom: 2rem;
+  
+}
+
+.article_card:hover .article_content{
+  height: 100%;
+  width: 100%;
+  left: 0%;
+}
+.article_card:hover .article_description,
+.article_card:hover .readmore_article{
+  opacity: 1;
+  transition-delay: 0.5;
+}
+
+.readmore_article{
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+
+.readmore_button{
+  border-radius: 9999px;
+  background-color: #E26F20;
+  padding-left : 3rem;
+  padding-right : 3rem;
+  padding-top: 0.5rem;
+  font-family: 'Comfortaa';
+  font-size: 20px;
+  padding-bottom: 0.5rem;
+  color: #FFFFFF;
+  border-width: 0.5px;
+  cursor: pointer;
+}
+
+.readmore_button:hover {
+  background-color: #2C1707;
+}
+
+/*end home page style */
+
+/*article details and comments page style */
+.comments-card{
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.comments-card:before{
+  content: "";
+  position: absolute;
+  bottom:  calc(-100% + 5px);
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background-color: #2C1707;
+  z-index: 1;
+  transition: 0.5s;
+}
+.comments-div{
+  position: relative;
+  z-index: 2;
+}
+.comments-card:hover .comments-div{
+  color: #FFFFFF;
+}
+.comments-card:hover:before{
+  bottom: 0;
+}
+.article_info{
+  height: 700px;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.image-article{
+
+  object-fit: cover;
+  height: 50%;
+  margin-top: 3rem;
+  width: 100%;
+}
+.author-div{
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.article_body{
+  font-size: 20px;
+}
+
+.comments-div{
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.comments-body{
+  font-size: 20px;
+}
+
+.article_title{
+  text-transform: uppercase;
+  font-family: 'Comfortaa';
+  font-size: 42px;
+}
+/*end article details and comments page style */
+
+/* media queries for small devices */
+@media screen and (max-width: 575px){
+  
+  .author-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  .author-email {
+    padding: 1rem;
+  }
+  .article_body{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
